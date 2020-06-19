@@ -63,6 +63,12 @@ describe('user', () => {
     })
       .rejects
       .toThrow();
+    
+    await expect(async () => {
+      await verificationModel.create(wrongBvn);
+    })
+      .rejects
+      .toThrow();
   });
 
   it('exists after being created', async () => {
@@ -153,5 +159,13 @@ const noBvn = {
   userId: '82hdd6dbs8',
   photoURL: 'mnop@xyz.com',
   videoURL: 'abcd@xyz.com',
+  status: true
+};
+
+const wrongBvn = {
+  userId: '82hdd6dbs8',
+  photoURL: 'mnop@xyz.com',
+  videoURL: 'abcd@xyz.com',
+  bvn: '123456789',
   status: true
 };
