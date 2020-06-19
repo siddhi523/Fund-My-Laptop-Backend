@@ -68,7 +68,7 @@ describe('user', () => {
   it('exists after being created', async () => {
     await verificationModel.create(mockUser3);
     const createdUser = await verificationModel.findOne();
-    expect(createdUser.id).toBe(mockUser3.id);                  
+    expect(createdUser.userId).toBe(mockUser3.userId);                  
   });
 
   it('can be updated correctly', async () => {
